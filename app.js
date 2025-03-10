@@ -1,16 +1,18 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
+
 app.use(express.json());
 
 app.get('/api', (req, res) => {
-    res.send('Hello, world! i am live now');
+    res.json({ message: 'Hello, World!',S3_BUCKET:process.env.S3_BUCKET });
 });
 
 app.get('/api/hello', (req, res) => {
-    res.json({ message: 'Hello, World!' });
+    res.json({ message: 'Hello, World!',S3_BUCKET:process.env.S3_BUCKET });
 });
-app.get('/api/hello/1', (req, res) => {
-    res.json({ message: 'Hello, World!' });
+app.get('/api/hello/1', (req, res) => {;
+    res.json({ message: 'Hello, World!',S3_BUCKET:process.env.S3_BUCKET });
 });
 
 app.get('/api/health', (req, res) => {
@@ -18,6 +20,7 @@ app.get('/api/health', (req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
+    console.log(process.env.S3_BUCKET)
     console.log(`Server is running on port localhost:3000/api`);
 });
