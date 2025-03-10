@@ -9,6 +9,9 @@ app.get('/api', (req, res) => {
 app.get('/api/hello', (req, res) => {
     res.json({ message: 'Hello, World!' });
 });
+app.get('/api/hello/1', (req, res) => {
+    res.json({ message: 'Hello, World!' });
+});
 
 app.get('/api/health', (req, res) => {
     res.status(200);
