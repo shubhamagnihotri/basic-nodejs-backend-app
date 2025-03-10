@@ -5,9 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/api', (req, res) => {
-    res.json({ message: 'Hello, World!',S3_BUCKET:process.env.S3_BUCKET
-        
-     });
+    res.json({ message: 'Hello, World!',S3_BUCKET:process.env.S3_BUCKET });
 });
 
 app.get('/api/hello', (req, res) => {
