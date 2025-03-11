@@ -16,6 +16,10 @@ app.get('/api/hello/1', (req, res) => {;
     res.json({ message: 'Hello, World! shubham',S3_BUCKET:process.env.S3_BUCKET });
 });
 
+app.get('/api/hello/name', (req, res) => {;
+    res.json({ message: 'Hello, World! shubham',S3_BUCKET:process.env.S3_BUCKET });
+});
+
 app.get('/api/health', (req, res) => {
     res.status(200);
 });
